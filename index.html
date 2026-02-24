@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clínica Veterinaria Villamarq · Especialistas en el bienestar de tu mascota</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🐾</text></svg>">
+  <meta name="description" content="Clínica Veterinaria Villamarq en Penonomé. Ofrecemos laboratorio digital, rayos X, grooming profesional, farmacia y hospitalización 24/7. Cuidamos a tu mascota con tecnología de punta.">
+  <meta name="keywords" content="veterinaria penonome, clinica veterinaria cocle, hospital veterinario panama, farmacia veterinaria, rayos x mascotas, grooming penonome">
+  <meta name="author" content="Villamarq">
+  <link rel="canonical" href="https://www.villamarq.com/">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Villamarq · Clínica Veterinaria y Laboratorio Digital en Penonomé">
+  <meta property="og:description" content="Tecnología de última generación para el cuidado de tu mascota. Consultas, Laboratorio, Farmacia y Hospitalización 24/7 en Coclé.">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1450778869180-41d0601e046e?q=80&w=1200">
+  <meta property="og:url" content="https://www.villamarq.com/">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Villamarq · Veterinaria líder en Penonomé">
+  <meta name="twitter:description" content="Laboratorio digital y cuidado especializado 24/7.">
+  <!-- Tailwind + plugins -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Font Awesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <!-- Google Fonts Inter + espacio moderno -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsl,wght@14..32,100..900&display=swap" rel="stylesheet">
+  <style>
+    * { font-family: 'Inter', sans-serif; }
+    .bg-verde-marca { background-color: #54B45C; }
+    .text-verde-marca { color: #54B45C; }
+    .border-verde-marca { border-color: #54B45C; }
+    .bg-gris-oscuro { background-color: #1F2937; }
+    .text-gris-oscuro { color: #1F2937; }
+    .bg-gris-medio { background-color: #4B5563; }
+    .text-gris-medio { color: #4B5563; }
+    .bg-gris-claro { background-color: #F3F4F6; }
+    .text-gris-claro { color: #F3F4F6; }
+    
+    /* Animaciones modernas */
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+    }
+    .animate-float { animation: float 4s ease-in-out infinite; }
+    
+    @keyframes gradientShift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+    
+    .slider-container {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      overflow: hidden;
+    }
+    
+    .slide {
+      position: absolute;
+      inset: 0;
+      background-size: cover;
+      background-position: center;
+      opacity: 0;
+      animation: slideAnimation 15s infinite;
+    }
+    
+    .slide:nth-child(1) { animation-delay: 0s; }
+    .slide:nth-child(2) { animation-delay: 5s; }
+    .slide:nth-child(3) { animation-delay: 10s; }
+    
+    @keyframes slideAnimation {
+      0% { opacity: 0; transform: scale(1.05); }
+      5% { opacity: 1; transform: scale(1); }
+      30% { opacity: 1; transform: scale(1); }
+      35% { opacity: 0; transform: scale(0.95); }
+      100% { opacity: 0; transform: scale(1.05); }
+    }
+    
+    .glass-effect {
+      background: rgba(0, 0, 0, 0.3);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    }
+    
+    .service-card {
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+    
+    .service-card:hover {
+      transform: translateY(-10px) scale(1.02);
+    }
+    
+    /* Menú más oscuro para mejor contraste */
+    .menu-dark {
+      background: rgba(0, 0, 0, 0.65) !important;
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(84, 180, 92, 0.3);
+    }
+
+    .modal-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(10px);
+    z-index: 100;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+.modal-content {
+    background: white;
+    max-width: 800px;
+    width: 100%;
+    border-radius: 2.5rem;
+    position: relative;
+    overflow: hidden;
+    animation: modalIn 0.4s ease-out;
+}
+@keyframes modalIn {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
+}
+  </style>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "VeterinaryCare",
+  "name": "Clínica Veterinaria Villamarq",
+  "image": "https://images.unsplash.com/photo-1450778869180-41d0601e046e?q=80&w=2086",
+  "@id": "https://www.villamarq.com",
+  "url": "https://www.villamarq.com",
+  "telephone": "+5079971335",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Calle Damián Carles, Plaza Gaby",
+    "addressLocality": "Penonomé",
+    "addressRegion": "Coclé",
+    "addressCountry": "PA"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 8.5123, 
+    "longitude": -80.3552
+  },
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      "opens": "08:00",
+      "closes": "19:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": "Saturday",
+      "opens": "08:00",
+      "closes": "18:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": "Sunday",
+      "opens": "08:00",
+      "closes": "16:00"
+    }
+  ],
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.7",
+    "reviewCount": "150"
+  }
+}
+</script>
+</head>
+<body class="bg-fondo-general text-gris-oscuro overflow-x-hidden">
+
+  <header class="fixed top-0 left-0 w-full z-50 bg-white/90 backdrop-blur-md border-b border-gray-100 shadow-sm">
+  <div class="container mx-auto px-6 py-4 flex items-center justify-between">
+    <div class="flex flex-col">
+      <span class="text-xs font-bold tracking-[0.2em] text-verde-marca uppercase">Clínica Veterinaria</span>
+      <span class="text-4xl font-black text-gray-900">Villamarq</span>
+    </div>
+    
+    <nav class="text-sm hidden md:flex items-center gap-8">
+      <a href="#inicio" class="text-gray-800 hover:text-verde-marca transition-all duration-300 text-lg relative group">
+        Inicio
+        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-verde-marca transition-all duration-300 group-hover:w-full"></span>
+      </a>
+      <a href="#servicios" class="text-gray-800 hover:text-verde-marca transition-all duration-300 text-lg relative group">
+        Servicios
+        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-verde-marca transition-all duration-300 group-hover:w-full"></span>
+      </a>
+      <a href="#ubicacion" class="text-gray-800 hover:text-verde-marca transition-all duration-300 text-lg relative group">
+        Ubicación
+        <span class="text-sm font-black absolute -bottom-1 left-0 w-0 h-0.5 bg-verde-marca transition-all duration-300 group-hover:w-full"></span>
+      </a>
+      <a href="#horarios" class="text-gray-800 hover:text-verde-marca transition-all duration-300 text-lg relative group">
+        Horarios
+        <span class="text-sm font-black absolute -bottom-1 left-0 w-0 h-0.5 bg-verde-marca transition-all duration-300 group-hover:w-full"></span>
+      </a>
+      <a href="#opiniones" class="text-gray-800 hover:text-verde-marca transition-all duration-300 text-lg relative group">
+        Opiniones
+        <span class="text-sm font-black absolute -bottom-1 left-0 w-0 h-0.5 bg-verde-marca transition-all duration-300 group-hover:w-full"></span>
+      </a>
+      <a href="https://wa.me/50763222286" class="font-bold text-lg bg-verde-marca text-white px-6 py-3 rounded-full hover:shadow-lg hover:shadow-verde-marca/30 transition-all duration-300 hover:scale-105">
+        Contactar
+      </a>
+    </nav>
+    
+    <button class="md:hidden text-gray-800 text-3xl"><i class="fa-solid fa-bars"></i></button>
+  </div>
+</header>
+
+<!--Banner-->
+
+  <section id="inicio" class="relative w-full h-screen overflow-hidden bg-black">
+  
+  <div class="absolute inset-0 animate-[crossFade_15s_infinite_0s] opacity-0" 
+       style="background-image: url('https://images.unsplash.com/photo-1450778869180-41d0601e046e?q=80&w=2086&auto=format&fit=crop'); background-size: cover; background-position: center;">
+    <div class="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent"></div>
+    <div class="absolute top-1/2 left-10 md:left-20 transform -translate-y-1/2 max-w-2xl">
+      <span class="inline-block bg-verde-marca/90 text-white px-4 py-2 rounded-full text-sm font-semibold mb-6 animate-pulse shadow-lg">✨ NUEVO: LABORATORIO DIGITAL</span>
+      <h1 class="text-5xl md:text-7xl font-black text-white mb-6 leading-tight drop-shadow-2xl">Tecnología de <br><span class="text-verde-marca">última generación</span></h1>
+      <p class="text-white text-xl md:text-1xl mb-8 opacity-95 drop-shadow-lg">Rayos X digital • Análisis clínicos • Resultados inmediatos</p>
+      <div class="flex gap-4">
+        <a href="#" class="hidden bg-verde-marca text-white px-8 py-4 rounded-full font-bold text-lg hover:shadow-2xl transition-all duration-300 hover:scale-105 shadow-lg">Descubrir servicios</a>
+        <a href="#" class="hidden bg-black/40 backdrop-blur-sm text-white px-8 py-4 rounded-full font-bold text-lg border border-white/40 hover:bg-black/60 transition-all">Ver promociones</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="absolute inset-0 animate-[crossFade_15s_infinite_5s] opacity-0" 
+       style="background-image: url('https://images.unsplash.com/photo-1548199973-03cce0bbc87b?q=80&w=2069&auto=format&fit=crop'); background-size: cover; background-position: center;">
+    <div class="absolute inset-0 bg-gradient-to-l from-black/80 via-black/40 to-transparent"></div>
+    <div class="absolute top-1/2 right-10 md:right-20 transform -translate-y-1/2 max-w-2xl text-right">
+      <span class="inline-block bg-verde-marca/90 text-white px-4 py-2 rounded-full text-sm font-semibold mb-6 shadow-lg">🐕 SPA PREMIUM</span>
+      <h2 class="text-5xl md:text-7xl font-black text-white mb-6 leading-tight drop-shadow-2xl">Grooming<br><span class="text-verde-marca">Profesional</span></h2>
+      <p class="text-white text-xl md:text-1xl mb-8 opacity-95 drop-shadow-lg">Corte • Baño • Tratamientos exclusivos</p>
+      <div class="flex gap-4 justify-end">
+        <a href="#" class="hidden bg-verde-marca text-white px-8 py-4 rounded-full font-bold text-lg hover:shadow-2xl transition-all shadow-lg">Reservar espacio</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="absolute inset-0 animate-[crossFade_15s_infinite_10s] opacity-0" 
+       style="background-image: url('https://images.unsplash.com/photo-1477936432016-8172ed08637e?q=80&w=1974&auto=format&fit=crop'); background-size: cover; background-position: center;">
+    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent"></div>
+    <div class="absolute bottom-20 left-1/2 transform -translate-x-1/2 text-center max-w-4xl w-full">
+      <span class="inline-block bg-verde-marca/90 text-white px-4 py-2 rounded-full text-sm font-semibold mb-6 shadow-lg">🏥 HOSPITALIZACIÓN 24/7</span>
+      <h2 class="text-5xl md:text-7xl font-black text-white mb-6 leading-tight drop-shadow-2xl">Cuidado intensivo <br><span class="text-verde-marca">con amor</span></h2>
+      <p class="text-white text-xl md:text-1xl mb-8 opacity-95 drop-shadow-lg">Monitoreo Clínico • Análisis en Tiempo Real • Especialistas</p>
+    </div>
+  </div>
+
+  <div class="absolute inset-0 animate-[crossFade_25s_infinite_15s] opacity-0" 
+       style="background-image: url('https://images.unsplash.com/photo-1628009368231-7bb7cfcb0def?q=80&w=2070&auto=format&fit=crop'); background-size: cover; background-position: center;">
+    <div class="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent"></div>
+    <div class="absolute top-1/2 left-10 md:left-20 transform -translate-y-1/2 max-w-2xl">
+      <span class="inline-block bg-verde-marca/90 text-white px-4 py-2 rounded-full text-sm font-semibold mb-6 shadow-lg">💊 FARMACIA VETERINARIA</span>
+      <h2 class="text-5xl md:text-7xl font-black text-white mb-6 leading-tight drop-shadow-2xl">Medicamentos <br><span class="text-verde-marca">Certificados</span></h2>
+      <p class="text-white text-xl md:text-1xl mb-8 opacity-95 drop-shadow-lg">Amplio Stock • Suplementos • Tratamientos Especializados</p>
+    </div>
+  </div>
+
+  <div class="absolute inset-0 animate-[crossFade_25s_infinite_20s] opacity-0" 
+       style="background-image: url('https://images.unsplash.com/photo-1535268647677-300dbf3d78d1?q=80&w=2069&auto=format&fit=crop'); background-size: cover; background-position: center;">
+    <div class="absolute inset-0 bg-gradient-to-l from-black/80 via-black/40 to-transparent"></div>
+    <div class="absolute top-1/2 right-10 md:right-20 transform -translate-y-1/2 max-w-2xl text-right">
+      <span class="inline-block bg-verde-marca/90 text-white px-4 py-2 rounded-full text-sm font-semibold mb-6 shadow-lg">🦴 PET SHOP</span>
+      <h2 class="text-5xl md:text-7xl font-black text-white mb-6 leading-tight drop-shadow-2xl">Todo para su <br><span class="text-verde-marca">Felicidad</span></h2>
+      <p class="text-white text-xl md:text-1xl mb-8 opacity-95 drop-shadow-lg">Alimentos Premium • Juguetes • Accesorios Exclusivos</p>
+    </div>
+  </div>
+
+  <style>
+    @keyframes crossFade {
+      0% { opacity: 0; }
+      5% { opacity: 1; }   /* Aparece rápido */
+      33% { opacity: 1; }  /* Se mantiene */
+      38% { opacity: 0; }  /* Se va mientras el otro ya entró */
+      100% { opacity: 0; }
+    }
+  </style>
+
+  <div class="absolute bottom-10 left-0 right-0 flex justify-center gap-4 z-20 flex-wrap px-4">
+    <span class="bg-white/10 backdrop-blur-md border border-white/20 text-white px-6 py-3 rounded-full font-semibold text-sm flex items-center gap-2 shadow-lg">
+      <i class="fa-solid fa-flask text-verde-marca"></i> Laboratorio: Rayos X
+    </span>
+    <span class="bg-white/10 backdrop-blur-md border border-white/20 text-white px-6 py-3 rounded-full font-semibold text-sm flex items-center gap-2 shadow-lg">
+      <i class="fa-solid fa-scissors text-verde-marca"></i> Grooming
+    </span>
+    <span class="bg-white/10 backdrop-blur-md border border-white/20 text-white px-6 py-3 rounded-full font-semibold text-sm flex items-center gap-2 shadow-lg">
+      <i class="fa-solid fa-pills text-verde-marca"></i> Farmacia
+    </span>
+    <span class="bg-white/10 backdrop-blur-md border border-white/20 text-white px-6 py-3 rounded-full font-semibold text-sm flex items-center gap-2 shadow-lg">
+      <i class="fa-solid fa-bone text-verde-marca"></i> Pet Shop
+    </span>
+    <span class="bg-white/10 backdrop-blur-md border border-white/20 text-white px-6 py-3 rounded-full font-semibold text-sm flex items-center gap-2 shadow-lg">
+      <i class="fa-solid fa-hospital text-verde-marca"></i> Hospitalización
+    </span>
+  </div>
+</section>
+  <!-- Aquí termina el banner y comienzan las secciones de servicios, horarios, ubicación y footer.-->
+
+  <!-- Sección servicios con diseño espectacular -->
+  <section id="servicios" class="py-32 bg-gris-claro relative overflow-hidden">
+    <div class="absolute top-0 right-0 w-96 h-96 bg-verde-marca/10 rounded-full blur-3xl"></div>
+    <div class="absolute bottom-0 left-0 w-96 h-96 bg-verde-marca/10 rounded-full blur-3xl"></div>
+    
+    <div class="container mx-auto px-6 relative z-10">
+      <div class="text-center mb-20">
+        <span class="text-verde-marca font-bold text-sm tracking-[0.3em] uppercase">Lo que hacemos</span>
+        <h2 class="text-5xl md:text-6xl font-black text-gris-oscuro mt-4 mb-6">
+          Servicios <span class="text-verde-marca">premium</span>
+        </h2>
+        <p class="text-xl text-gris-medio max-w-3xl mx-auto">Más que una clínica, un centro de bienestar integral para tu mejor amigo</p>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Consultas -->
+        <div class="service-card bg-white from-gris-claro to-white p-8 rounded-3xl shadow-xl hover:shadow-2xl border border-gris-claro group">
+          <div class="w-20 h-20 bg-verde-marca/20 rounded-2xl flex items-center justify-center text-4xl text-verde-marca mb-6 group-hover:scale-110 transition-all">🩺</div>
+          <h3 class="text-2xl font-bold mb-3">Consultas especializadas</h3>
+          <p class="text-gris-medio mb-6">Medicina preventiva, diagnósticos precisos y seguimiento personalizado para tu mascota.</p>
+          <a onclick="openModal('consultas')" class="text-verde-marca font-semibold flex items-center gap-2 group-hover:gap-4 transition-all">
+            Conocer más <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
+        
+        <!-- Farmacia -->
+        <div class="service-card bg-white from-gris-claro to-white p-8 rounded-3xl shadow-xl hover:shadow-2xl border border-gris-claro group">
+          <div class="w-20 h-20 bg-verde-marca/20 rounded-2xl flex items-center justify-center text-4xl text-verde-marca mb-6 group-hover:scale-110 transition-all">💊</div>
+          <h3 class="text-2xl font-bold mb-3">Farmacia veterinaria</h3>
+          <p class="text-gris-medio mb-6">Amplio stock de medicamentos, pipetas, antiparasitarios y productos de alta calidad.</p>
+          <a onclick="openModal('farmacia')" class="text-verde-marca font-semibold flex items-center gap-2 group-hover:gap-4 transition-all">
+            Ver productos <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
+        
+        <!-- Laboratorio -->
+        <div class="service-card bg-white from-gris-claro to-white p-8 rounded-3xl shadow-xl hover:shadow-2xl border border-gris-claro group">
+          <div class="w-20 h-20 bg-verde-marca/20 rounded-2xl flex items-center justify-center text-4xl text-verde-marca mb-6 group-hover:scale-110 transition-all">🔬</div>
+          <h3 class="text-2xl font-bold mb-3">Laboratorio clínico</h3>
+          <p class="text-gris-medio mb-6">Análisis de sangre, rayos X digital, ecografías y resultados en tiempo real.</p>
+          <a onclick="openModal('laboratorio')" class="text-verde-marca font-semibold flex items-center gap-2 group-hover:gap-4 transition-all">
+            Ver tecnologías <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
+        
+        <!-- Hospitalización -->
+        <div class="service-card bg-white from-gris-claro to-white p-8 rounded-3xl shadow-xl hover:shadow-2xl border border-gris-claro group">
+          <div class="w-20 h-20 bg-verde-marca/20 rounded-2xl flex items-center justify-center text-4xl text-verde-marca mb-6 group-hover:scale-110 transition-all">🏥</div>
+          <h3 class="text-2xl font-bold mb-3">Hospitalización 24/7</h3>
+          <p class="text-gris-medio mb-6">Cuidado intensivo, monitoreo constante y habitaciones confortables para recuperación.</p>
+          <a onclick="openModal('hospital')" class="text-verde-marca font-semibold flex items-center gap-2 group-hover:gap-4 transition-all">
+            Ver instalaciones <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
+        
+        <!-- Grooming (nuevo) -->
+        <div class="service-card bg-white from-gris-claro to-white p-8 rounded-3xl shadow-xl hover:shadow-2xl border border-gris-claro group">
+          <div class="w-20 h-20 bg-verde-marca/20 rounded-2xl flex items-center justify-center text-4xl text-verde-marca mb-6 group-hover:scale-110 transition-all">✂️</div>
+          <h3 class="text-2xl font-bold mb-3">Grooming & Spa</h3>
+          <p class="text-gris-medio mb-6">Baños medicados, cortes de raza, hidratación y tratamientos de belleza.</p>
+          <a onclick="openModal('grooming')" class="text-verde-marca font-semibold flex items-center gap-2 group-hover:gap-4 transition-all">
+            Ver estilos <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
+        
+        <!-- Pet Shop -->
+        <div class="service-card bg-white from-gris-claro to-white p-8 rounded-3xl shadow-xl hover:shadow-2xl border border-gris-claro group">
+          <div class="w-20 h-20 bg-verde-marca/20 rounded-2xl flex items-center justify-center text-4xl text-verde-marca mb-6 group-hover:scale-110 transition-all">🐾</div>
+          <h3 class="text-2xl font-bold mb-3">Pet Shop</h3>
+          <p class="text-gris-medio mb-6">Alimentos premium, accesorios, juguetes y todo para el bienestar de tu mascota.</p>
+          <a onclick="openModal('petshop')" class="text-verde-marca font-semibold flex items-center gap-2 group-hover:gap-4 transition-all">
+            Comprar ahora <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Horarios con diseño moderno y llamativo -->
+  <section id="horarios" class="py-24 bg-[#111827] text-white relative overflow-hidden">
+  <div class="absolute inset-0 opacity-5">
+    <i class="fa-solid fa-clock text-[300px] absolute -top-10 -right-10 rotate-12"></i>
+  </div>
+  
+  <div class="container mx-auto px-6 relative z-10">
+    <div class="grid lg:grid-cols-2 gap-16 items-center">
+      
+      <div>
+        <span class="text-verde-marca font-bold text-sm tracking-[0.4em] uppercase">Disponibilidad</span>
+        <h2 class="text-5xl md:text-7xl font-black mt-6 mb-8 leading-tight">
+          Siempre <br>
+          <span class="text-verde-marca">contigo</span>
+        </h2>
+        <p class="text-xl text-gray-400 max-w-md leading-relaxed">
+          Porque las emergencias no tienen horario, nosotros estamos listos para atender a tu mascota en cualquier momento.
+        </p>
+      </div>
+      
+      <div class="space-y-4">
+        
+        <div class="bg-white/5 backdrop-blur-xl rounded-[2rem] p-8 border border-white/10 shadow-2xl flex justify-between items-center group hover:border-verde-marca/50 transition-all duration-500">
+          <div>
+            <p class="text-gray-400 text-xs uppercase tracking-widest mb-1">Días de semana</p>
+            <h4 class="text-xl md:text-2xl font-bold text-white">Lunes - Viernes</h4>
+          </div>
+          <div class="text-right">
+            <span class="text-2xl md:text-3xl font-black text-verde-marca">8:00 - 19:00</span>
+          </div>
+        </div>
+
+        <div class="bg-white/5 backdrop-blur-xl rounded-[2rem] p-8 border border-white/10 shadow-2xl flex justify-between items-center group hover:border-verde-marca/50 transition-all duration-500">
+          <div>
+            <p class="text-gray-400 text-xs uppercase tracking-widest mb-1">Fines de semana</p>
+            <h4 class="text-xl md:text-2xl font-bold text-white">Sábados</h4>
+          </div>
+          <div class="text-right">
+            <span class="text-2xl md:text-3xl font-black text-verde-marca">8:00 - 18:00</span>
+          </div>
+        </div>
+
+        <div class="bg-white/5 backdrop-blur-xl rounded-[2rem] p-8 border border-white/10 shadow-2xl flex justify-between items-center group hover:border-verde-marca/50 transition-all duration-500">
+          <div>
+            <p class="text-gray-400 text-xs uppercase tracking-widest mb-1">Especial</p>
+            <h4 class="text-xl md:text-2xl font-bold text-white">Domingos</h4>
+          </div>
+          <div class="text-right">
+            <span class="text-2xl md:text-3xl font-black text-verde-marca">8:00 - 16:00</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+  <!-- Ubicación + Mapa interactivo -->
+  <section id="ubicacion" class="py-32 bg-white">
+    <div class="container mx-auto px-6">
+      <div class="grid lg:grid-cols-2 gap-16 items-center">
+        <div>
+          <span class="text-verde-marca font-semibold text-sm tracking-[0.3em] uppercase">Visítanos</span>
+          <h2 class="text-5xl md:text-6xl font-black text-gris-oscuro mt-4 mb-6 leading-tight">
+            Plaza Gaby, <br>
+            <span class="text-verde-marca">Penonomé</span>
+          </h2>
+          <p class="text-2xl text-gris-medio mb-4">Calle Damián Carles</p>
+          <p class="text-lg text-gris-medio mb-8 flex items-center gap-2">
+            <i class="fa-solid fa-location-dot text-verde-marca"></i> Coclé, Panamá
+          </p>
+          
+          <div class="flex gap-6 mb-12">
+            <div class="text-center">
+              <div class="w-16 h-16 bg-verde-marca/20 rounded-2xl flex items-center justify-center text-3xl text-verde-marca mb-2">🚗</div>
+              <p class="font-semibold">Estacionamiento</p>
+            </div>
+            <div class="text-center">
+              <div class="w-16 h-16 bg-verde-marca/20 rounded-2xl flex items-center justify-center text-3xl text-verde-marca mb-2">♿</div>
+              <p class="font-semibold">Accesibilidad</p>
+            </div>
+            <div class="text-center">
+              <div class="w-16 h-16 bg-verde-marca/20 rounded-2xl flex items-center justify-center text-3xl text-verde-marca mb-2">🐕</div>
+              <p class="font-semibold">Pet friendly</p>
+            </div>
+          </div>
+          
+          <!-- Contacto rápido -->
+          <div class="bg-gris-claro rounded-3xl p-8">
+            <h3 class="text-2xl font-bold mb-4">Contacto directo</h3>
+            <div class="space-y-1">
+              <div class="flex items-center gap-2 text-lg">
+                <i class="fa-brands fa-whatsapp text-3xl text-verde-marca"></i>
+                <span class="font-inter pb-1">6322-2286</span>
+              </div>
+              <div class="flex items-center gap-2 text-lg">
+                <i class="fa-solid fa-phone text-3xl text-verde-marca"></i>
+                <span class="font-inter pb-1">997-1335</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Mapa -->
+        <div class="h-[600px] rounded-3xl overflow-hidden shadow-2xl border-8 border-white">
+          <iframe class="w-full h-full" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3945.8088907674583!2d-80.36233072590352!3d8.517927796781414!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8fac4f178223eb0f%3A0x90a83080bc98b71!2sCl%C3%ADnica%20Veterinaria%20Villamarq!5e0!3m2!1ses-419!2spa!4v1771894437960!5m2!1ses-419!2spa" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<!-- Sección de opiniones con diseño moderno y atractivo -->
+
+  <section id="opiniones" class="pt-32 pb-32 bg-white relative overflow-hidden">
+    <div class="container mx-auto px-6 relative z-10">
+      <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+        <div class="max-w-2xl">
+          <span class="text-verde-marca font-semibold text-sm tracking-[0.3em] uppercase">Opiniones reales</span>
+          <h2 class="text-5xl md:text-6xl font-black text-gris-oscuro mt-4">Lo que dicen <br><span class="text-verde-marca">nuestros clientes</span></h2>
+        </div>
+        <div class="flex flex-col items-center md:items-end">
+          <div class="flex items-center gap-2 mb-2">
+            <i class="fa-solid fa-star text-yellow-400 text-2xl"></i>
+            <i class="fa-solid fa-star text-yellow-400 text-2xl"></i>
+            <i class="fa-solid fa-star text-yellow-400 text-2xl"></i>
+            <i class="fa-solid fa-star text-yellow-400 text-2xl"></i>
+            <i class="fa-solid fa-star text-yellow-400 text-2xl"></i>
+          </div>
+          <p class="text-gris-medio font-bold">4.7/5 en Google Reviews</p>
+          <a href="https://g.page/r/CXGLyQsIgwoJEBM/review" target="_blank" class="text-verde-marca hover:underline font-semibold mt-2 text-sm">Dejar una opinión <i class="fa-solid fa-external-link text-xs"></i></a>
+        </div>
+      </div>
+
+      <div id="google-reviews-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        
+        <div class="bg-gris-claro p-8 rounded-[2rem] border border-transparent hover:border-verde-marca/30 transition-all duration-300">
+          <div class="flex items-center gap-4 mb-6">
+            <img src="https://ui-avatars.com/api/?name=Litzi+Chirú&background=54B45C&color=fff" alt="Usuario" class="w-14 h-14 rounded-full shadow-md">
+            <div>
+              <h4 class="font-bold text-gris-oscuro">Litzi Chirú</h4>
+              <p class="text-xs text-gray-500">Hace 5 meses</p>
+            </div>
+          </div>
+          <div class="flex text-yellow-400 text-sm mb-4">
+            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+          </div>
+          <p class="text-gris-medio leading-relaxed">"Una clínica veterinaria verdaderamente integral
+Estoy muy satisfecho con la atención y los servicios de esta clínica veterinaria. Desde el primer momento, se nota el profesionalismo y el cariño con el que tratan a nuestras mascotas."</p>
+          <div class="mt-6 flex items-center gap-2 text-xs font-bold text-blue-500 uppercase">
+            <i class="fa-brands fa-google"></i> Google Review
+          </div>
+        </div>
+
+        <div class="bg-gris-claro p-8 rounded-[2rem] border border-transparent hover:border-verde-marca/30 transition-all duration-300">
+          <div class="flex items-center gap-4 mb-6">
+            <img src="https://ui-avatars.com/api/?name=Rosa+Dutto&background=1F2937&color=fff" alt="Usuario" class="w-14 h-14 rounded-full shadow-md">
+            <div>
+              <h4 class="font-bold text-gris-oscuro">Rosa Dutto</h4>
+              <p class="text-xs text-gray-500">Hace 7 meses</p>
+            </div>
+          </div>
+          <div class="flex text-yellow-400 text-sm mb-4">
+            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+          </div>
+          <p class="text-gris-medio leading-relaxed">"Muy buen trato. Practico pues se hacen los examenes en el mismo lugar. Tiene la farmacia también."</p>
+          <div class="mt-6 flex items-center gap-2 text-xs font-bold text-blue-500 uppercase">
+            <i class="fa-brands fa-google"></i> Google Review
+          </div>
+        </div>
+
+        <div class="bg-gris-claro p-8 rounded-[2rem] border border-transparent hover:border-verde-marca/30 transition-all duration-300">
+          <div class="flex items-center gap-4 mb-6">
+            <img src="https://ui-avatars.com/api/?name=Nicole+Díaz&background=54B45C&color=fff" alt="Usuario" class="w-14 h-14 rounded-full shadow-md">
+            <div>
+              <h4 class="font-bold text-gris-oscuro">Nicole Díaz</h4>
+              <p class="text-xs text-gray-500">Hace 8 meses</p>
+            </div>
+          </div>
+          <div class="flex text-yellow-400 text-sm mb-4">
+            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+          </div>
+          <p class="text-gris-medio leading-relaxed">"El es personal muy amable y atento, hay calidad humana para nuestras mascotas y variedad de comida para nuestras mascotas."</p>
+          <div class="mt-6 flex items-center gap-2 text-xs font-bold text-blue-500 uppercase">
+            <i class="fa-brands fa-google"></i> Google Review
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer ultra moderno -->
+  <footer class="bg-gris-oscuro text-white relative overflow-hidden">
+    <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-verde-marca to-transparent"></div>
+    
+    <div class="container mx-auto px-6 py-20">
+      <div class="grid md:grid-cols-4 gap-12">
+        <!-- Logo + frase -->
+        <div class="md:col-span-1">
+          <div class="flex flex-col">
+            <span class="text-xs font-bold tracking-[0.3em] text-gray-400 uppercase">Clínica Veterinaria</span>
+            <span class="text-5xl font-black text-verde-marca leading-tight">Villa<span class="text-white">marq</span></span>
+          </div>
+          <p class="text-sm italic text-gray-300 mt-2">“Porque amamos tu mascota”</p>
+          <p class="text-gray-400 mt-6 text-sm">Más que una clínica, una familia que entiende y cuida a quienes más quieres.</p>
+        </div>
+        
+        <!-- Enlaces rápidos -->
+        <div>
+          <h4 class="text-xl font-bold mb-6 text-verde-marca">Explorar</h4>
+          <ul class="space-y-4">
+            <li><a href="#inicio" class="text-gray-300 hover:text-white text-lg flex items-center gap-2"><i class="fa-solid fa-chevron-right text-sm"></i> Inicio</a></li>
+            <li><a href="#servicios" class="text-gray-300 hover:text-white text-lg flex items-center gap-2"><i class="fa-solid fa-chevron-right text-sm"></i> Servicios</a></li>
+            <li><a href="#contacto" class="text-gray-300 hover:text-white text-lg flex items-center gap-2"><i class="fa-solid fa-chevron-right text-sm"></i> Contacto</a></li>
+          </ul>
+        </div>
+        
+        <!-- Contacto -->
+        <div>
+          <h4 class="text-xl font-bold mb-6 text-verde-marca">Contacto</h4>
+          <ul class="space-y-4">
+            <li class="flex items-center gap-3 text-lg"><i class="fa-solid fa-phone text-verde-marca"></i> 997-1335</li>
+            <li class="flex items-center gap-3 text-lg"><i class="fa-brands fa-whatsapp text-verde-marca"></i> 6322-2286</li>
+          </ul>
+        </div>
+        
+        <!-- Redes sociales -->
+        <div>
+          <h4 class="text-xl font-bold mb-6 text-verde-marca">Síguenos</h4>
+          <div class="flex gap-4">
+            <a href="#" class="w-14 h-14 bg-white/10 rounded-2xl flex items-center justify-center text-2xl hover:bg-verde-marca transition-all duration-300 hover:scale-110">
+              <i class="fa-brands fa-instagram"></i>
+            </a>
+            <a href="#" class="w-14 h-14 bg-white/10 rounded-2xl flex items-center justify-center text-2xl hover:bg-verde-marca transition-all duration-300 hover:scale-110">
+              <i class="fa-brands fa-whatsapp"></i>
+            </a>
+            <a href="#" class="w-14 h-14 bg-white/10 rounded-2xl flex items-center justify-center text-2xl hover:bg-verde-marca transition-all duration-300 hover:scale-110">
+              <i class="fa-brands fa-facebook-f"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Marca personal + copyright -->
+      <div class="mt-20 pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4">
+        <p class="text-gray-400 text-sm">
+          Hecho con <i class="fa-solid fa-heart text-verde-marca animate-pulse"></i> por <span class="font-bold text-white">Wecreate</span>
+        </p>
+        <p class="text-gray-400 text-sm">©2026 Clínica Veterinaria Villamarq. Todos los derechos reservados.</p>
+        <div class="text-sm flex gap-4">
+          <a href="#" class="text-gray-400 hover:text-white">Privacidad</a>
+          <a href="#" class="text-gray-400 hover:text-white">Cookies</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <div id="serviceModal" class="modal-overlay" onclick="closeModal()">
+    <div class="modal-content" onclick="event.stopPropagation()">
+        <div class="p-12">
+            <button onclick="closeModal()" class="absolute top-6 right-6 text-gray-400 hover:text-black text-2xl">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <div id="modalBody">
+                </div>
+        </div>
+    </div>
+</div>
+
+
+<div id="serviceModal" class="modal-overlay" onclick="closeModal()">
+    <div class="modal-content" onclick="event.stopPropagation()">
+        <div class="p-12">
+            <button onclick="closeModal()" class="absolute top-6 right-6 text-gray-400 hover:text-black text-2xl">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <div id="modalBody">
+                </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Base de datos de servicios con imágenes reales y profesionales
+    const servicesData = {
+        consultas: {
+            title: "Consultas <span class='text-verde-marca'>Especializadas</span>",
+            desc: "Medicina preventiva y diagnósticos precisos. Evaluamos a tu mascota de forma integral para asegurar una vida larga y saludable.",
+            list: ["Chequeo General", "Vacunación Completa", "Certificados de Salud", "Asesoría Nutricional"],
+            img: "https://images.unsplash.com/photo-1537151608828-ea2b11777ee8?auto=format&fit=crop&q=80&w=1000"
+        },
+        farmacia: {
+            title: "Farmacia <span class='text-verde-marca'>Especializada</span>",
+            desc: "Contamos con el stock más completo de la región en medicamentos de alta complejidad y medicina preventiva.",
+            list: ["Antibióticos y Analgésicos", "Protección contra Pulgas/Garrapatas", "Suplementos Vitamínicos", "Tratamientos Crónicos"],
+            img: "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&q=80&w=1000"
+        },
+        laboratorio: {
+            title: "Laboratorio <span class='text-verde-marca'>Digital</span>",
+            desc: "Tecnología de última generación para obtener resultados en minutos. La rapidez en el diagnóstico salva vidas.",
+            list: ["Rayos X Digital", "Hemogramas y Bioquímica", "Pruebas de Enfermedades Virales", "Ecografías"],
+            img: "https://images.unsplash.com/photo-1581594693702-fbdc51b2763b?auto=format&fit=crop&q=80&w=1000"
+        },
+        hospital: {
+            title: "Hospitalización <span class='text-verde-marca'>24/7</span>",
+            desc: "Monitoreo constante en áreas cómodas y seguras. Tu mascota nunca estará sola durante su recuperación.",
+            list: ["Cuidado Intensivo", "Fluido-terapia", "Monitoreo de Signos Vitales", "Atención Post-Quirúrgica"],
+            img: "https://images.unsplash.com/photo-1628009368231-7bb7cfcb0def?q=80&w=1000"
+        },
+        grooming: {
+            title: "Grooming <span class='text-verde-marca'>& Spa</span>",
+            desc: "Mucho más que un corte de pelo. Es una experiencia de higiene y estética profesional para perros y gatos.",
+            list: ["Cortes de Raza", "Baños Medicados", "Limpieza de Oídos y Uñas", "Drenaje de Glándulas"],
+            img: "https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?q=80&w=1000"
+        },
+        petshop: {
+            title: "Pet <span class='text-verde-marca'>Shop Premium</span>",
+            desc: "Selección exclusiva de los mejores alimentos y accesorios para garantizar la felicidad de tu mascota.",
+            list: ["Alimento Súper Premium", "Juguetes Interactivos", "Accesorios de Paseo", "Camas y Transportadores"],
+            img: "https://images.unsplash.com/photo-1535268647677-300dbf3d78d1?q=80&w=1000"
+        }
+    };
+
+    function openModal(serviceKey) {
+        const data = servicesData[serviceKey];
+        if (!data) return;
+        
+        const body = document.getElementById('modalBody');
+        body.innerHTML = `
+            <div class="grid md:grid-cols-2 gap-10 items-center">
+                <div class="relative">
+                    <img src="${data.img}" class="rounded-[2.5rem] h-80 w-full object-cover shadow-2xl">
+                    <div class="absolute -bottom-4 -right-4 bg-verde-marca text-white p-4 rounded-2xl shadow-xl">
+                        <i class="fa-solid fa-shield-dog text-2xl"></i>
+                    </div>
+                </div>
+                <div>
+                    <h2 class="text-4xl font-black mb-4 text-gray-900">${data.title}</h2>
+                    <p class="text-gray-500 text-lg mb-6 leading-relaxed">${data.desc}</p>
+                    <div class="space-y-3 mb-8">
+                        ${data.list.map(item => `
+                            <div class="flex items-center gap-3">
+                                <div class="w-6 h-6 bg-verde-marca/10 rounded-full flex items-center justify-center">
+                                    <i class="fa-solid fa-check text-verde-marca text-xs"></i>
+                                </div>
+                                <span class="text-gray-700 font-medium">${item}</span>
+                            </div>
+                        `).join('')}
+                    </div>
+                    <a href="https://wa.me/50763222286" target="_blank" class="block text-center bg-gray-900 text-white py-5 rounded-full font-bold text-lg hover:bg-verde-marca hover:scale-105 transition-all shadow-xl">
+                        <i class="fa-brands fa-whatsapp mr-2"></i> Solicitar Cita
+                    </a>
+                </div>
+            </div>
+        `;
+        document.getElementById('serviceModal').style.display = 'flex';
+        document.body.style.overflow = 'hidden'; // Evita el scroll al estar abierto
+    }
+
+    function closeModal() {
+        document.getElementById('serviceModal').style.display = 'none';
+        document.body.style.overflow = 'auto';
+    }
+</script>
+  
+</body>
+</html>
