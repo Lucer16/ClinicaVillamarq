@@ -183,24 +183,24 @@
       <span class="text-3xl font-black text-gray-900 uppercase">Villamarq</span>
     </div>
     
-    <nav class="text-sm hidden md:flex items-center gap-8">
-      <a href="#inicio" class="text-gray-800 hover:text-verde-marca transition-all duration-300 text-lg relative group">
+    <nav class="hidden md:flex items-center gap-8">
+      <a href="#inicio" class="text-gray-800 hover:text-verde-marca transition-all duration-300 text-md relative group">
         Inicio
         <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-verde-marca transition-all duration-300 group-hover:w-full"></span>
       </a>
-      <a href="#servicios" class="text-gray-800 hover:text-verde-marca transition-all duration-300 text-lg relative group">
+      <a href="#servicios" class="text-gray-800 hover:text-verde-marca transition-all duration-300 text-md relative group">
         Servicios
         <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-verde-marca transition-all duration-300 group-hover:w-full"></span>
       </a>
-      <a href="#ubicacion" class="text-gray-800 hover:text-verde-marca transition-all duration-300 text-lg relative group">
+      <a href="#ubicacion" class="text-gray-800 hover:text-verde-marca transition-all duration-300 text-md relative group">
         Ubicación
         <span class="text-sm font-black absolute -bottom-1 left-0 w-0 h-0.5 bg-verde-marca transition-all duration-300 group-hover:w-full"></span>
       </a>
-      <a href="#horarios" class="text-gray-800 hover:text-verde-marca transition-all duration-300 text-lg relative group">
+      <a href="#horarios" class="text-gray-800 hover:text-verde-marca transition-all duration-300 text-md relative group">
         Horarios
         <span class="text-sm font-black absolute -bottom-1 left-0 w-0 h-0.5 bg-verde-marca transition-all duration-300 group-hover:w-full"></span>
       </a>
-      <a href="#opiniones" class="text-gray-800 hover:text-verde-marca transition-all duration-300 text-lg relative group">
+      <a href="#opiniones" class="text-gray-800 hover:text-verde-marca transition-all duration-300 text-md relative group">
         Opiniones
         <span class="text-sm font-black absolute -bottom-1 left-0 w-0 h-0.5 bg-verde-marca transition-all duration-300 group-hover:w-full"></span>
       </a>
@@ -214,7 +214,6 @@
 </header>
 
 <!--Banner-->
-
   <section id="inicio" class="relative w-full h-screen overflow-hidden bg-black">
   
   <div class="absolute inset-0 animate-[crossFade_15s_infinite_0s] opacity-0" 
@@ -304,7 +303,7 @@
 </section>
   <!-- Aquí termina el banner y comienzan las secciones de servicios, horarios, ubicación y footer.-->
 
-  <!-- Sección servicios con diseño espectacular -->
+  <!-- Sección servicios -->
   <section id="servicios" class="py-32 bg-gris-claro relative overflow-hidden">
     <div class="absolute top-0 right-0 w-96 h-96 bg-verde-marca/10 rounded-full blur-3xl"></div>
     <div class="absolute bottom-0 left-0 w-96 h-96 bg-verde-marca/10 rounded-full blur-3xl"></div>
@@ -382,7 +381,7 @@
     </div>
   </section>
 
-  <!-- Horarios con diseño moderno y llamativo -->
+  <!-- Horarios -->
   <section id="horarios" class="py-24 bg-[#111827] text-white relative overflow-hidden">
   <div class="absolute inset-0 opacity-5">
     <i class="fa-solid fa-clock text-[300px] absolute -top-10 -right-10 rotate-12"></i>
@@ -409,8 +408,9 @@
             <p class="text-gray-400 text-xs uppercase tracking-widest mb-1">Días de semana</p>
             <h4 class="text-xl md:text-2xl font-bold text-white">Lunes - Viernes</h4>
           </div>
-          <div class="text-right">
-            <span class="text-2xl md:text-3xl font-black text-verde-marca">8:00 - 19:00</span>
+          <div class="flex flex-col items-end">
+            <span class="text-[10px] font-black uppercase tracking-[0.3em] text-gray-500 mb-1">AM — PM</span>
+            <span class="text-2xl md:text-3xl font-black text-verde-marca">8:00 - 7:00</span>
           </div>
         </div>
 
@@ -419,8 +419,9 @@
             <p class="text-gray-400 text-xs uppercase tracking-widest mb-1">Fines de semana</p>
             <h4 class="text-xl md:text-2xl font-bold text-white">Sábados</h4>
           </div>
-          <div class="text-right">
-            <span class="text-2xl md:text-3xl font-black text-verde-marca">8:00 - 18:00</span>
+          <div class="flex flex-col items-end">
+            <span class="text-[10px] font-black uppercase tracking-[0.3em] text-gray-500 mb-1">AM — PM</span>
+            <span class="text-2xl md:text-3xl font-black text-verde-marca">8:00 - 6:00</span>
           </div>
         </div>
 
@@ -429,8 +430,9 @@
             <p class="text-gray-400 text-xs uppercase tracking-widest mb-1">Especial</p>
             <h4 class="text-xl md:text-2xl font-bold text-white">Domingos</h4>
           </div>
-          <div class="text-right">
-            <span class="text-2xl md:text-3xl font-black text-verde-marca">8:00 - 16:00</span>
+          <div class="flex flex-col items-end">
+            <span class="text-[10px] font-black uppercase tracking-[0.3em] text-gray-500 mb-1">AM — PM</span>
+            <span class="text-2xl md:text-3xl font-black text-verde-marca">8:00 - 4:00</span>
           </div>
         </div>
 
@@ -439,62 +441,70 @@
   </div>
 </section>
 
-  <!-- Ubicación + Mapa interactivo -->
-  <section id="ubicacion" class="py-32 bg-white">
-    <div class="container mx-auto px-6">
-      <div class="grid lg:grid-cols-2 gap-16 items-center">
-        <div>
-          <span class="text-verde-marca font-semibold text-sm tracking-[0.3em] uppercase">Visítanos</span>
-          <h2 class="text-5xl md:text-6xl font-black text-gris-oscuro mt-4 mb-6 leading-tight">
-            Plaza Gaby, <br>
-            <span class="text-verde-marca">Penonomé</span>
-          </h2>
-          <p class="text-2xl text-gris-medio mb-4">Calle Damián Carles</p>
-          <p class="text-lg text-gris-medio mb-8 flex items-center gap-2">
-            <i class="fa-solid fa-location-dot text-verde-marca"></i> Coclé, Panamá
-          </p>
-          
-          <div class="flex gap-6 mb-12">
-            <div class="text-center">
-              <div class="w-16 h-16 bg-verde-marca/20 rounded-2xl flex items-center justify-center text-3xl text-verde-marca mb-2">🚗</div>
-              <p class="font-semibold">Estacionamiento</p>
-            </div>
-            <div class="text-center">
-              <div class="w-16 h-16 bg-verde-marca/20 rounded-2xl flex items-center justify-center text-3xl text-verde-marca mb-2">♿</div>
-              <p class="font-semibold">Accesibilidad</p>
-            </div>
-            <div class="text-center">
-              <div class="w-16 h-16 bg-verde-marca/20 rounded-2xl flex items-center justify-center text-3xl text-verde-marca mb-2">🐕</div>
-              <p class="font-semibold">Pet friendly</p>
-            </div>
-          </div>
-          
-          <!-- Contacto rápido -->
-          <div class="bg-gris-claro rounded-3xl p-8">
-            <h3 class="text-2xl font-bold mb-4">Contacto directo</h3>
-            <div class="space-y-1">
-              <div class="flex items-center gap-2 text-lg">
-                <i class="fa-brands fa-whatsapp text-3xl text-verde-marca"></i>
-                <span class="font-inter pb-1">6322-2286</span>
-              </div>
-              <div class="flex items-center gap-2 text-lg">
-                <i class="fa-solid fa-phone text-3xl text-verde-marca"></i>
-                <span class="font-inter pb-1">997-1335</span>
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        <!-- Mapa -->
-        <div class="h-[600px] rounded-3xl overflow-hidden shadow-2xl border-8 border-white">
-          <iframe class="w-full h-full" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3945.8088907674583!2d-80.36233072590352!3d8.517927796781414!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8fac4f178223eb0f%3A0x90a83080bc98b71!2sCl%C3%ADnica%20Veterinaria%20Villamarq!5e0!3m2!1ses-419!2spa!4v1771894437960!5m2!1ses-419!2spa" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-        </div>
+<!-- Trayectoria -->
+<section id="trayectoria" class="py-32 bg-white overflow-hidden">
+  <div class="container mx-auto px-6">
+    
+    <div class="flex flex-col md:flex-row md:items-end justify-between mb-24 gap-8">
+      <div class="max-w-xl">
+        <span class="text-verde-marca font-bold text-sm tracking-[0.4em] uppercase mb-4 block">Nuestra Evolución</span>
+        <h2 class="text-5xl md:text-6xl font-black text-gris-oscuro leading-none">
+          Más que <br><span class="text-verde-marca">historia.</span>
+        </h2>
+      </div>
+      <div class="md:max-w-sm">
+        <p class="text-lg text-gris-medio border-l-4 border-verde-marca pl-6 italic">
+          "Evolucionamos cada día para que la salud de tu mascota nunca se detenga."
+        </p>
       </div>
     </div>
-  </section>
 
-<!-- Sección de opiniones con diseño moderno y atractivo -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      
+      <div class="group relative bg-gris-claro p-10 rounded-[3rem] transition-all duration-500 hover:bg-verde-marca hover:scale-[1.02] cursor-default overflow-hidden">
+        <span class="absolute -right-4 -top-8 text-[12rem] font-black text-white/50 group-hover:text-black/10 transition-colors">01</span>
+        <div class="relative z-10">
+          <div class="w-14 h-14 bg-white rounded-2xl flex items-center justify-center text-verde-marca text-2xl mb-8 shadow-sm">
+            <i class="fa-solid fa-seedling"></i>
+          </div>
+          <h3 class="text-3xl font-black mb-4 group-hover:text-verde-marca transition-colors">El Origen</h3>
+          <p class="text-gris-medio group-hover:text-verde-marca transition-colors leading-relaxed">
+            Nacemos en Penonomé con el propósito de ofrecer una atención médica cálida y profesional que no existía en la región.
+          </p>
+        </div>
+      </div>
 
+      <div class="group relative bg-gris-oscuro p-10 rounded-[3rem] transition-all duration-500 hover:scale-[1.02] cursor-default overflow-hidden md:translate-y-12">
+        <span class="absolute -right-4 -top-8 text-[12rem] font-black text-white/5 transition-colors">02</span>
+        <div class="relative z-10">
+          <div class="w-14 h-14 bg-verde-marca rounded-2xl flex items-center justify-center text-white text-2xl mb-8 shadow-lg">
+            <i class="fa-solid fa-rocket"></i>
+          </div>
+          <h3 class="text-3xl font-black text-white mb-4">Expansión</h3>
+          <p class="text-gray-400 leading-relaxed">
+            Consolidamos nuestra sede en Plaza Gaby, expandiendo nuestra capacidad de hospitalización y atención especializada.
+          </p>
+        </div>
+      </div>
+
+      <div class="group relative bg-gris-claro p-10 rounded-[3rem] transition-all duration-500 hover:bg-verde-marca hover:scale-[1.02] cursor-default overflow-hidden">
+        <span class="absolute -right-4 -top-8 text-[12rem] font-black text-white/50 group-hover:text-black/10 transition-colors">03</span>
+        <div class="relative z-10">
+          <div class="w-14 h-14 bg-white rounded-2xl flex items-center justify-center text-verde-marca text-2xl mb-8 shadow-sm">
+            <i class="fa-solid fa-microchip"></i>
+          </div>
+          <h3 class="text-3xl font-black mb-4 group-hover:text-verde-marca transition-colors">Hoy</h3>
+          <p class="text-gris-medio group-hover:text-verde-marca transition-colors leading-relaxed">
+            Lideramos la medicina veterinaria digital en Coclé, integrando tecnología de vanguardia para diagnósticos instantáneos.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Sección de opiniones -->
   <section id="opiniones" class="pt-32 pb-32 bg-white relative overflow-hidden">
     <div class="container mx-auto px-6 relative z-10">
       <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
@@ -573,6 +583,172 @@ Estoy muy satisfecho con la atención y los servicios de esta clínica veterinar
     </div>
   </section>
 
+  <!-- Ubicación + Mapa interactivo -->
+  <section id="ubicacion" class="py-32 bg-white">
+    <div class="container mx-auto px-6">
+      <div class="grid lg:grid-cols-2 gap-16 items-center">
+        <div>
+          <span class="text-verde-marca font-semibold text-sm tracking-[0.3em] uppercase">Visítanos</span>
+          <h2 class="text-5xl md:text-6xl font-black text-gris-oscuro mt-4 mb-6 leading-tight">
+            Plaza Gaby, <br>
+            <span class="text-verde-marca">Penonomé</span>
+          </h2>
+          <p class="text-2xl text-gris-medio mb-4">Calle Damián Carles</p>
+          <p class="text-lg text-gris-medio mb-8 flex items-center gap-2">
+            <i class="fa-solid fa-location-dot text-verde-marca"></i> Coclé, Panamá
+          </p>
+          
+          <div class="flex gap-6 mb-12">
+            <div class="text-center">
+              <div class="w-16 h-16 bg-verde-marca/20 rounded-2xl flex items-center justify-center text-3xl text-verde-marca mb-2">🚗</div>
+              <p class="font-semibold">Estacionamiento</p>
+            </div>
+            <div class="text-center">
+              <div class="w-16 h-16 bg-verde-marca/20 rounded-2xl flex items-center justify-center text-3xl text-verde-marca mb-2">♿</div>
+              <p class="font-semibold">Accesibilidad</p>
+            </div>
+            <div class="text-center">
+              <div class="w-16 h-16 bg-verde-marca/20 rounded-2xl flex items-center justify-center text-3xl text-verde-marca mb-2">🐕</div>
+              <p class="font-semibold">Pet friendly</p>
+            </div>
+          </div>
+          
+          <!-- Contacto rápido -->
+          <div class="bg-gris-claro rounded-3xl p-8">
+            <h3 class="text-2xl font-bold mb-4">Contacto directo</h3>
+            <div class="space-y-1">
+              <div class="flex items-center gap-2 text-lg">
+                <i class="fa-brands fa-whatsapp text-3xl text-verde-marca"></i>
+                <span class="font-inter pb-1">6322-2286</span>
+              </div>
+              <div class="flex items-center gap-2 text-lg">
+                <i class="fa-solid fa-phone text-3xl text-verde-marca"></i>
+                <span class="font-inter pb-1">997-1335</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Mapa -->
+        <div class="h-[600px] rounded-3xl overflow-hidden shadow-2xl border-8 border-white">
+          <iframe class="w-full h-full" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3945.8088907674583!2d-80.36233072590352!3d8.517927796781414!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8fac4f178223eb0f%3A0x90a83080bc98b71!2sCl%C3%ADnica%20Veterinaria%20Villamarq!5e0!3m2!1ses-419!2spa!4v1771894437960!5m2!1ses-419!2spa" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<!-- CTA -->
+  <section id="contacto-final" class="py-40 bg-gris-claro relative">
+  <div class="container mx-auto px-6">
+    <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-16">
+      
+      <div class="max-w-3xl">
+        <span class="text-verde-marca font-black text-xs tracking-[0.5em] uppercase mb-8 block">Compromiso Villamarq</span>
+        <h2 class="text-5xl md:text-6xl font-black text-gris-oscuro leading-none tracking-tighter">
+          El cuidado que <br>
+          <span class="text-verde-marca">ellos merecen.</span>
+        </h2>
+        <p class="text-2xl text-gris-medio mt-10 max-w-xl leading-relaxed">
+          Tecnología de última generación y amor por la vida, todo en un solo lugar en <span class="font-bold text-gris-oscuro">Penonomé</span>.
+        </p>
+      </div>
+
+      <div class="flex flex-col gap-6 shrink-0">
+        
+        <a href="https://wa.me/50763222286" class="btn-cta-custom btn-ws-verde">
+          <span class="text-2xl font-black">Escríbenos</span>
+          <div class="icon-circle-custom">
+            <i class="fa-brands fa-whatsapp"></i>
+          </div>
+        </a>
+
+        <a href="tel:5079971335" class="btn-cta-custom btn-tel-outline">
+          <span class="text-2xl font-black">Llámanos</span>
+          <div class="icon-circle-custom">
+            <i class="fa-solid fa-phone"></i>
+          </div>
+        </a>
+
+        <div class="flex items-center gap-3 px-6 mt-2">
+          <div class="flex -space-x-2">
+            <div class="w-8 h-8 rounded-full bg-verde-marca border-2 border-white flex items-center justify-center text-[10px] text-white font-bold shadow-sm">
+              <i class="fa-solid fa-check"></i>
+            </div>
+          </div>
+          <p class="text-sm font-bold text-gris-medio uppercase tracking-widest">Respuesta inmediata</p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="absolute bottom-0 left-0 w-full h-1 bg-gray-100">
+    <div class="w-1/3 h-full bg-verde-marca"></div>
+  </div>
+</section>
+<style>
+  /* Estilos específicos para los botones del CTA */
+  .btn-cta-custom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 1rem 1rem 2.5rem;
+    border-radius: 9999px;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    min-width: 300px;
+  }
+
+  .icon-circle-custom {
+    width: 3.5rem;
+    height: 3.5rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    transition: all 0.3s ease;
+  }
+
+  /* WhatsApp - Verde */
+  .btn-ws-verde {
+    background-color: #54B45C;
+    color: white;
+  }
+  .btn-ws-verde .icon-circle-custom {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: white;
+  }
+  .btn-ws-verde:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 15px 30px rgba(84, 180, 92, 0.3);
+  }
+  .btn-ws-verde:hover .icon-circle-custom {
+    background-color: white;
+    color: #54B45C;
+  }
+
+  /* Llamar - Oscuro Outline */
+  .btn-tel-outline {
+    border: 2px solid #1F2937;
+    color: #1F2937;
+    background-color: transparent;
+  }
+  .btn-tel-outline .icon-circle-custom {
+    background-color: #F3F4F6;
+    color: #1F2937;
+  }
+  /* Fix del Hover: El círculo ahora se ve bien sobre fondo oscuro */
+  .btn-tel-outline:hover {
+    background-color: #1F2937;
+    color: white;
+  }
+  .btn-tel-outline:hover .icon-circle-custom {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: white;
+  }
+</style>
+
   <!-- Footer ultra moderno -->
   <footer class="bg-gris-oscuro text-white relative overflow-hidden">
     <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-verde-marca to-transparent"></div>
@@ -583,7 +759,7 @@ Estoy muy satisfecho con la atención y los servicios de esta clínica veterinar
         <div class="md:col-span-1">
           <div class="flex flex-col">
             <span class="text-xs font-bold tracking-[0.3em] text-gray-400 uppercase">Clínica Veterinaria</span>
-            <span class="text-3xl font-black text-verde-marca leading-tight uppercase">Villamarq</span></span>
+            <span class="text-4xl font-black text-verde-marca leading-tight uppercase">Villamarq</span></span>
           </div>
           <p class="text-sm italic text-gray-300 mt-2">“Porque amamos tu mascota”</p>
           <p class="text-gray-400 mt-6 text-sm">Más que una clínica, una familia que entiende y cuida a quienes más quieres.</p>
@@ -593,18 +769,18 @@ Estoy muy satisfecho con la atención y los servicios de esta clínica veterinar
         <div>
           <h4 class="text-xl font-bold mb-6 text-verde-marca">Explorar</h4>
           <ul class="space-y-4">
-            <li><a href="#inicio" class="text-gray-300 hover:text-white text-lg flex items-center gap-2"><i class="fa-solid fa-chevron-right text-sm"></i> Inicio</a></li>
-            <li><a href="#servicios" class="text-gray-300 hover:text-white text-lg flex items-center gap-2"><i class="fa-solid fa-chevron-right text-sm"></i> Servicios</a></li>
-            <li><a href="#contacto" class="text-gray-300 hover:text-white text-lg flex items-center gap-2"><i class="fa-solid fa-chevron-right text-sm"></i> Contacto</a></li>
+            <li><a href="#inicio" class="text-gray-300 hover:text-white text-md flex items-center gap-2"><i class="fa-solid fa-chevron-right text-sm"></i> Inicio</a></li>
+            <li><a href="#servicios" class="text-gray-300 hover:text-white text-md flex items-center gap-2"><i class="fa-solid fa-chevron-right text-sm"></i> Servicios</a></li>
+            <li><a href="#contacto" class="text-gray-300 hover:text-white text-md flex items-center gap-2"><i class="fa-solid fa-chevron-right text-sm"></i> Contacto</a></li>
           </ul>
         </div>
         
         <!-- Contacto -->
         <div>
           <h4 class="text-xl font-bold mb-6 text-verde-marca">Contacto</h4>
-          <ul class="space-y-4">
-            <li class="flex items-center gap-3 text-lg"><i class="fa-solid fa-phone text-verde-marca"></i> 997-1335</li>
-            <li class="flex items-center gap-3 text-lg"><i class="fa-brands fa-whatsapp text-verde-marca"></i> 6322-2286</li>
+          <ul class="space-y-4 text-gray-300 hover:text-white">
+            <li class="flex items-center gap-3 text-md"><i class="fa-solid fa-phone text-verde-marca"></i> 997-1335</li>
+            <li class="flex items-center gap-3 text-md"><i class="fa-brands fa-whatsapp text-verde-marca"></i> 6322-2286</li>
           </ul>
         </div>
         
@@ -631,76 +807,103 @@ Estoy muy satisfecho con la atención y los servicios de esta clínica veterinar
           Hecho con <i class="fa-solid fa-heart text-verde-marca animate-pulse"></i> por <span class="font-bold text-white">Wecreate</span>
         </p>
         <p class="text-gray-400 text-sm">©2026 Clínica Veterinaria Villamarq. Todos los derechos reservados.</p>
-        <div class="text-sm flex gap-4">
-          <a href="#" class="text-gray-400 hover:text-white">Privacidad</a>
-          <a href="#" class="text-gray-400 hover:text-white">Cookies</a>
-        </div>
       </div>
     </div>
   </footer>
 
   <div id="serviceModal" class="modal-overlay" onclick="closeModal()">
     <div class="modal-content" onclick="event.stopPropagation()">
-        <div class="p-12">
-            <button onclick="closeModal()" class="absolute top-6 right-6 text-gray-400 hover:text-black text-2xl">
-                <i class="fa-solid fa-xmark"></i>
-            </button>
-            <div id="modalBody">
-                </div>
-        </div>
+        <button onclick="closeModal()" class="absolute top-4 right-4 z-50 bg-white/80 backdrop-blur w-10 h-10 rounded-full flex items-center justify-center text-gray-900 shadow-lg">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+        
+        <div id="modalBody" class="modal-padding p-8 md:p-12">
+            </div>
     </div>
 </div>
 
+<style>
+  .modal-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(8px);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+  }
 
-<div id="serviceModal" class="modal-overlay" onclick="closeModal()">
-    <div class="modal-content" onclick="event.stopPropagation()">
-        <div class="p-12">
-            <button onclick="closeModal()" class="absolute top-6 right-6 text-gray-400 hover:text-black text-2xl">
-                <i class="fa-solid fa-xmark"></i>
-            </button>
-            <div id="modalBody">
-                </div>
-        </div>
-    </div>
-</div>
+  .modal-content {
+    background: white;
+    width: 100%;
+    max-width: 900px;
+    max-height: 90vh;
+    border-radius: 2.5rem;
+    position: relative;
+    overflow-y: auto; /* Permite scroll interno si el contenido es largo en móvil */
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  }
+
+  /* Ajustes específicos para móviles */
+  @media (max-width: 768px) {
+    .modal-content {
+      border-radius: 1.5rem;
+      max-height: 95vh;
+    }
+    .modal-padding {
+      padding: 2rem 1.5rem !important;
+    }
+    .modal-grid {
+      grid-template-columns: 1fr !important;
+      gap: 1.5rem !important;
+    }
+    .modal-img {
+      height: 200px !important;
+    }
+    .modal-title {
+      font-size: 1.875rem !important; /* text-3xl */
+    }
+  }
+</style>
 
 <script>
-    // Base de datos de servicios con imágenes reales y profesionales
     const servicesData = {
         consultas: {
             title: "Consultas <span class='text-verde-marca'>Especializadas</span>",
-            desc: "Medicina preventiva y diagnósticos precisos. Evaluamos a tu mascota de forma integral para asegurar una vida larga y saludable.",
-            list: ["Chequeo General", "Vacunación Completa", "Certificados de Salud", "Asesoría Nutricional"],
+            desc: "Medicina preventiva y diagnósticos precisos para una vida larga.",
+            list: ["Chequeo General", "Vacunación", "Certificados", "Nutrición"],
             img: "https://images.unsplash.com/photo-1537151608828-ea2b11777ee8?auto=format&fit=crop&q=80&w=1000"
         },
         farmacia: {
             title: "Farmacia <span class='text-verde-marca'>Especializada</span>",
-            desc: "Contamos con el stock más completo de la región en medicamentos de alta complejidad y medicina preventiva.",
-            list: ["Antibióticos y Analgésicos", "Protección contra Pulgas/Garrapatas", "Suplementos Vitamínicos", "Tratamientos Crónicos"],
+            desc: "Stock completo de medicamentos de alta calidad.",
+            list: ["Antibióticos", "Antiparasitarios", "Suplementos", "Tratamientos"],
             img: "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&q=80&w=1000"
         },
         laboratorio: {
             title: "Laboratorio <span class='text-verde-marca'>Digital</span>",
-            desc: "Tecnología de última generación para obtener resultados en minutos. La rapidez en el diagnóstico salva vidas.",
-            list: ["Rayos X Digital", "Hemogramas y Bioquímica", "Pruebas de Enfermedades Virales", "Ecografías"],
+            desc: "Resultados en minutos con tecnología de vanguardia.",
+            list: ["Rayos X Digital", "Hemogramas", "Pruebas Virales", "Ecografías"],
             img: "https://images.unsplash.com/photo-1581594693702-fbdc51b2763b?auto=format&fit=crop&q=80&w=1000"
         },
         hospital: {
             title: "Hospitalización <span class='text-verde-marca'>24/7</span>",
-            desc: "Monitoreo constante en áreas cómodas y seguras. Tu mascota nunca estará sola durante su recuperación.",
-            list: ["Cuidado Intensivo", "Fluido-terapia", "Monitoreo de Signos Vitales", "Atención Post-Quirúrgica"],
+            desc: "Monitoreo constante en áreas seguras.",
+            list: ["Cuidado Intensivo", "Fluido-terapia", "Signos Vitales", "Post-Quirúrgica"],
             img: "https://images.unsplash.com/photo-1628009368231-7bb7cfcb0def?q=80&w=1000"
         },
         grooming: {
             title: "Grooming <span class='text-verde-marca'>& Spa</span>",
-            desc: "Mucho más que un corte de pelo. Es una experiencia de higiene y estética profesional para perros y gatos.",
-            list: ["Cortes de Raza", "Baños Medicados", "Limpieza de Oídos y Uñas", "Drenaje de Glándulas"],
+            desc: "Higiene y estética profesional para perros y gatos.",
+            list: ["Cortes de Raza", "Baños Medicados", "Uñas y Oídos", "Glándulas"],
             img: "https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?q=80&w=1000"
         },
         petshop: {
             title: "Pet <span class='text-verde-marca'>Shop Premium</span>",
-            desc: "Selección exclusiva de los mejores alimentos y accesorios para garantizar la felicidad de tu mascota.",
-            list: ["Alimento Súper Premium", "Juguetes Interactivos", "Accesorios de Paseo", "Camas y Transportadores"],
+            desc: "Los mejores alimentos y accesorios para tu mascota.",
+            list: ["Alimento Súper Premium", "Juguetes", "Paseo", "Camas"],
             img: "https://images.unsplash.com/photo-1535268647677-300dbf3d78d1?q=80&w=1000"
         }
     };
@@ -711,34 +914,34 @@ Estoy muy satisfecho con la atención y los servicios de esta clínica veterinar
         
         const body = document.getElementById('modalBody');
         body.innerHTML = `
-            <div class="grid md:grid-cols-2 gap-10 items-center">
+            <div class="modal-grid grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
                 <div class="relative">
-                    <img src="${data.img}" class="rounded-[2.5rem] h-80 w-full object-cover shadow-2xl">
-                    <div class="absolute -bottom-4 -right-4 bg-verde-marca text-white p-4 rounded-2xl shadow-xl">
-                        <i class="fa-solid fa-shield-dog text-2xl"></i>
+                    <img src="${data.img}" class="modal-img rounded-[2rem] h-64 md:h-80 w-full object-cover shadow-xl">
+                    <div class="absolute -bottom-2 -right-2 bg-verde-marca text-white p-3 rounded-xl shadow-lg">
+                        <i class="fa-solid fa-shield-dog text-xl"></i>
                     </div>
                 </div>
                 <div>
-                    <h2 class="text-4xl font-black mb-4 text-gray-900">${data.title}</h2>
-                    <p class="text-gray-500 text-lg mb-6 leading-relaxed">${data.desc}</p>
-                    <div class="space-y-3 mb-8">
+                    <h2 class="modal-title text-3xl md:text-4xl font-black mb-4 text-gray-900 leading-tight">${data.title}</h2>
+                    <p class="text-gray-500 text-base md:text-lg mb-6 leading-relaxed">${data.desc}</p>
+                    <div class="grid grid-cols-1 gap-2 mb-8">
                         ${data.list.map(item => `
                             <div class="flex items-center gap-3">
-                                <div class="w-6 h-6 bg-verde-marca/10 rounded-full flex items-center justify-center">
-                                    <i class="fa-solid fa-check text-verde-marca text-xs"></i>
+                                <div class="w-5 h-5 bg-verde-marca/10 rounded-full flex items-center justify-center shrink-0">
+                                    <i class="fa-solid fa-check text-verde-marca text-[10px]"></i>
                                 </div>
-                                <span class="text-gray-700 font-medium">${item}</span>
+                                <span class="text-gray-700 text-sm font-medium">${item}</span>
                             </div>
                         `).join('')}
                     </div>
-                    <a href="https://wa.me/50763222286" target="_blank" class="block text-center bg-gray-900 text-white py-5 rounded-full font-bold text-lg hover:bg-verde-marca hover:scale-105 transition-all shadow-xl">
+                    <a href="https://wa.me/50763222286" target="_blank" class="block text-center bg-gray-900 text-white py-4 rounded-full font-bold text-lg active:scale-95 transition-all shadow-lg">
                         <i class="fa-brands fa-whatsapp mr-2"></i> Solicitar Cita
                     </a>
                 </div>
             </div>
         `;
         document.getElementById('serviceModal').style.display = 'flex';
-        document.body.style.overflow = 'hidden'; // Evita el scroll al estar abierto
+        document.body.style.overflow = 'hidden';
     }
 
     function closeModal() {
