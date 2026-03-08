@@ -176,42 +176,71 @@
 </head>
 <body class="bg-fondo-general text-gris-oscuro overflow-x-hidden">
 
-  <header class="fixed top-0 left-0 w-full z-50 bg-white/90 backdrop-blur-md border-b border-gray-100 shadow-sm">
-  <div class="container mx-auto px-6 py-4 flex items-center justify-between">
-    <div class="flex flex-col">
-      <span class="text-xs font-bold tracking-[0.2em] text-verde-marca uppercase">Clínica Veterinaria</span>
-      <span class="text-3xl font-black text-gray-900 uppercase">Villamarq</span>
+  <header class="fixed top-0 left-0 w-full z-50 bg-white/70 backdrop-blur-xl border-b border-white/20 shadow-sm transition-all duration-300">
+  <div class="container mx-auto px-6 py-4 flex items-center justify-between relative">
+    
+    <div class="flex flex-col relative">
+      <span class="text-[10px] font-bold tracking-[0.2em] text-[#54B45C] uppercase">Clínica Veterinaria</span>
+      <span class="text-3xl font-black text-gray-900 uppercase leading-none">Villamarq</span>
     </div>
     
     <nav class="hidden md:flex items-center gap-8">
-      <a href="#inicio" class="text-gray-800 hover:text-verde-marca transition-all duration-300 text-md relative group">
-        Inicio
-        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-verde-marca transition-all duration-300 group-hover:w-full"></span>
-      </a>
-      <a href="#servicios" class="text-gray-800 hover:text-verde-marca transition-all duration-300 text-md relative group">
-        Servicios
-        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-verde-marca transition-all duration-300 group-hover:w-full"></span>
-      </a>
-      <a href="#ubicacion" class="text-gray-800 hover:text-verde-marca transition-all duration-300 text-md relative group">
-        Ubicación
-        <span class="text-sm font-black absolute -bottom-1 left-0 w-0 h-0.5 bg-verde-marca transition-all duration-300 group-hover:w-full"></span>
-      </a>
-      <a href="#horarios" class="text-gray-800 hover:text-verde-marca transition-all duration-300 text-md relative group">
-        Horarios
-        <span class="text-sm font-black absolute -bottom-1 left-0 w-0 h-0.5 bg-verde-marca transition-all duration-300 group-hover:w-full"></span>
-      </a>
-      <a href="#opiniones" class="text-gray-800 hover:text-verde-marca transition-all duration-300 text-md relative group">
-        Opiniones
-        <span class="text-sm font-black absolute -bottom-1 left-0 w-0 h-0.5 bg-verde-marca transition-all duration-300 group-hover:w-full"></span>
-      </a>
-      <a href="https://wa.me/50763222286" class="font-bold text-lg bg-verde-marca text-white px-6 py-3 rounded-full hover:shadow-lg hover:shadow-verde-marca/30 transition-all duration-300 hover:scale-105">
+      <a href="#inicio" class="text-gray-800 hover:text-[#54B45C] font-semibold transition-all">Inicio</a>
+      <a href="#servicios" class="text-gray-800 hover:text-[#54B45C] font-semibold transition-all">Servicios</a>
+      <a href="#horarios" class="text-gray-800 hover:text-[#54B45C] font-semibold transition-all">Horarios</a>
+      <a href="#trayectoria" class="text-gray-800 hover:text-[#54B45C] font-semibold transition-all">Trayectoria</a>
+      <a href="#ubicacion" class="text-gray-800 hover:text-[#54B45C] font-semibold transition-all">Ubicación</a>
+      <a href="https://wa.me/50763222286" class="bg-[#54B45C] text-white px-6 py-3 rounded-full font-bold shadow-lg hover:scale-105 transition-all">
         Contactar
       </a>
     </nav>
     
-    <button class="md:hidden text-gray-800 text-3xl"><i class="fa-solid fa-bars"></i></button>
+    <button id="menu-btn" class="md:hidden text-gray-900 text-3xl focus:outline-none">
+      <i class="fa-solid fa-bars-staggered"></i>
+    </button>
+
+    <div id="mobile-menu" class="hidden absolute top-full left-0 w-[90%] mx-[5%] mt-4 bg-white/95 backdrop-blur-2xl border border-gray-100 rounded-[2.5rem] p-8 flex flex-col shadow-2xl">
+      <div class="grid grid-cols-1 gap-4">
+          <a href="tel:5079971335" class="w-full bg-gray-900 text-white py-5 rounded-2xl font-bold flex items-center justify-center space-x-3 active:scale-95 transition-transform uppercase tracking-widest text-xs">
+              <i class="fa-solid fa-phone"></i>
+              <span>Llamar Ahora</span>
+          </a>
+          
+          <a href="https://wa.me/50763222286" target="_blank" class="w-full bg-[#54B45C] text-white py-5 rounded-2xl font-bold flex items-center justify-center space-x-3 active:scale-95 transition-transform uppercase tracking-widest text-xs">
+              <i class="fa-brands fa-whatsapp text-lg"></i>
+              <span>Escribir WhatsApp</span>
+          </a>
+      </div>
+    </div>
+
   </div>
 </header>
+
+<script>
+  const menuBtn = document.getElementById('menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  menuBtn.addEventListener('click', () => {
+    mobileMenu.classList.toggle('hidden');
+    const icon = menuBtn.querySelector('i');
+    if (icon) {
+      icon.classList.toggle('fa-bars-staggered');
+      icon.classList.toggle('fa-xmark');
+    }
+  });
+
+  // Cerrar al hacer clic en un botón
+  document.querySelectorAll('#mobile-menu a').forEach(link => {
+    link.addEventListener('click', () => {
+      mobileMenu.classList.add('hidden');
+      const icon = menuBtn.querySelector('i');
+      if (icon) {
+        icon.classList.add('fa-bars-staggered');
+        icon.classList.remove('fa-xmark');
+      }
+    });
+  });
+</script>
 
 <!--Banner-->
   <section id="inicio" class="relative w-full h-screen overflow-hidden bg-black">
