@@ -181,7 +181,7 @@
     
     <div class="flex flex-col relative">
       <span class="text-[10px] font-bold tracking-[0.2em] text-[#54B45C] uppercase">Clínica Veterinaria</span>
-      <span class="text-3xl font-black text-gray-900 uppercase leading-none">Villamarq</span>
+      <span class="text-2xl font-black text-gray-900 uppercase leading-none">Villamarq</span>
     </div>
     
     <nav class="hidden md:flex items-center gap-8">
@@ -439,7 +439,7 @@
           </div>
           <div class="flex flex-col items-end">
             <span class="text-[10px] font-black uppercase tracking-[0.3em] text-gray-500 mb-1">AM — PM</span>
-            <span class="text-1xl md:text-3xl font-black text-verde-marca">8:00 - 7:00</span>
+            <span class="text-xl md:text-3xl font-black text-verde-marca">8:00 - 7:00</span>
           </div>
         </div>
 
@@ -450,7 +450,7 @@
           </div>
           <div class="flex flex-col items-end">
             <span class="text-[10px] font-black uppercase tracking-[0.3em] text-gray-500 mb-1">AM — PM</span>
-            <span class="text-1xl md:text-3xl font-black text-verde-marca">8:00 - 6:00</span>
+            <span class="text-xl md:text-3xl font-black text-verde-marca">8:00 - 6:00</span>
           </div>
         </div>
 
@@ -461,7 +461,7 @@
           </div>
           <div class="flex flex-col items-end">
             <span class="text-[10px] font-black uppercase tracking-[0.3em] text-gray-500 mb-1">AM — PM</span>
-            <span class="text-1xl md:text-3xl font-black text-verde-marca">8:00 - 4:00</span>
+            <span class="text-xl md:text-3xl font-black text-verde-marca">8:00 - 4:00</span>
           </div>
         </div>
 
@@ -613,58 +613,64 @@ Estoy muy satisfecho con la atención y los servicios de esta clínica veterinar
   </section>
 
   <!-- Ubicación + Mapa interactivo -->
-  <section id="ubicacion" class="py-32 bg-white">
-    <div class="container mx-auto px-6">
-      <div class="grid lg:grid-cols-2 gap-16 items-center">
-        <div>
-          <span class="text-verde-marca font-semibold text-sm tracking-[0.3em] uppercase">Visítanos</span>
-          <h2 class="text-5xl md:text-6xl font-black text-gris-oscuro mt-4 mb-6 leading-tight">
-            Plaza Gaby, <br>
-            <span class="text-verde-marca">Penonomé</span>
+  <section id="ubicacion" class="py-32 bg-white overflow-hidden">
+  <div class="container mx-auto px-6">
+    <div class="flex flex-col lg:flex-row gap-12 items-stretch">
+      
+      <div class="lg:w-2/5 flex flex-col justify-center">
+        <div class="relative">
+          <span class="text-verde-marca font-semibold text-sm tracking-[0.3em] uppercase block mb-2">Visítanos</span>
+          <h2 class="text-5xl md:text-7xl font-black text-gris-oscuro leading-none mb-8">
+            Plaza Gaby,<br>
+            <span class="text-verde-marca italic">Penonomé</span>
           </h2>
-          <p class="text-2xl text-gris-medio mb-4">Calle Damián Carles</p>
-          <p class="text-lg text-gris-medio mb-8 flex items-center gap-2">
-            <i class="fa-solid fa-location-dot text-verde-marca"></i> Coclé, Panamá
-          </p>
           
-          <div class="flex gap-6 mb-12">
-            <div class="text-center">
-              <div class="w-16 h-16 bg-verde-marca/20 rounded-2xl flex items-center justify-center text-3xl text-verde-marca mb-2">🚗</div>
-              <p class="font-semibold">Parking</p>
+          <div class="space-y-2 mb-10">
+            <p class="text-3xl font-light text-gris-oscuro">Calle Damián Carles</p>
+            <p class="text-lg text-gris-medio flex items-center gap-2">
+              <span class="w-6 h-6 rounded-full bg-verde-marca/10 flex items-center justify-center">
+                <i class="fa-solid fa-location-dot text-verde-marca text-xs"></i>
+              </span>
+              Coclé, Panamá
+            </p>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+            <div class="flex items-center gap-3 bg-gris-oscuro/[0.03] border border-gris-oscuro/5 p-3 rounded-2xl hover:bg-verde-marca/5 transition-colors group">
+              <span class="text-2xl group-hover:scale-110 transition-transform">🚗</span>
+              <p class="font-bold text-sm text-gris-oscuro uppercase tracking-wider">Parking</p>
             </div>
-            <div class="text-center">
-              <div class="w-16 h-16 bg-verde-marca/20 rounded-2xl flex items-center justify-center text-3xl text-verde-marca mb-2">♿</div>
-              <p class="font-semibold">Acceso</p>
+            <div class="flex items-center gap-3 bg-gris-oscuro/[0.03] border border-gris-oscuro/5 p-3 rounded-2xl hover:bg-verde-marca/5 transition-colors group">
+              <span class="text-2xl group-hover:scale-110 transition-transform">♿</span>
+              <p class="font-bold text-sm text-gris-oscuro uppercase tracking-wider">Acceso</p>
             </div>
-            <div class="text-center">
-              <div class="w-16 h-16 bg-verde-marca/20 rounded-2xl flex items-center justify-center text-3xl text-verde-marca mb-2">🚽</div>
-              <p class="font-semibold">Baño</p>
+            <div class="flex items-center gap-3 bg-gris-oscuro/[0.03] border border-gris-oscuro/5 p-3 rounded-2xl hover:bg-verde-marca/5 transition-colors group">
+              <span class="text-2xl group-hover:scale-110 transition-transform">🚽</span>
+              <p class="font-bold text-sm text-gris-oscuro uppercase tracking-wider">Baños</p>
             </div>
           </div>
-          
-          <!-- Contacto rápido -->
-          <div class="bg-gris-claro rounded-3xl p-8">
-            <h3 class="text-2xl font-bold mb-4">Contacto directo</h3>
-            <div class="space-y-1">
-              <div class="flex items-center gap-2 text-lg">
-                <i class="fa-brands fa-whatsapp text-3xl text-verde-marca"></i>
-                <span class="font-inter pb-1">6322-2286</span>
-              </div>
-              <div class="flex items-center gap-2 text-lg">
-                <i class="fa-solid fa-phone text-3xl text-verde-marca"></i>
-                <span class="font-inter pb-1">997-1335</span>
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        <!-- Mapa -->
-        <div class="h-[600px] rounded-3xl overflow-hidden shadow-2xl border-8 border-white">
-          <iframe class="w-full h-full" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3945.8088907674583!2d-80.36233072590352!3d8.517927796781414!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8fac4f178223eb0f%3A0x90a83080bc98b71!2sCl%C3%ADnica%20Veterinaria%20Villamarq!5e0!3m2!1ses-419!2spa!4v1771894437960!5m2!1ses-419!2spa" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
         </div>
       </div>
+
+      <div class="lg:w-3/5 relative">
+        <div class="absolute -top-6 -right-6 w-32 h-32 bg-verde-marca/10 rounded-full blur-3xl"></div>
+        <div class="absolute -bottom-6 -left-6 w-32 h-32 bg-verde-marca/20 rounded-full blur-3xl"></div>
+        
+        <div class="relative h-[500px] lg:h-full min-h-[450px] rounded-[2.5rem] overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.1)] border-4 border-white ring-1 ring-gris-oscuro/5">
+          <iframe 
+            class="w-full h-full grayscale-[0.2] hover:grayscale-0 transition-all duration-700" 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3945.8088907674583!2d-80.36233072590352!3d8.517927796781414!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8fac4f178223eb0f%3A0x90a83080bc98b71!2sCl%C3%ADnica%20Veterinaria%20Villamarq!5e0!3m2!1ses-419!2spa!4v1771894437960!5m2!1ses-419!2spa" 
+            style="border:0;" 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+      </div>
+
     </div>
-  </section>
+  </div>
+</section>
 
 <!-- CTA -->
   <section id="contacto-final" class="py-40 bg-gris-claro relative">
@@ -788,7 +794,7 @@ Estoy muy satisfecho con la atención y los servicios de esta clínica veterinar
         <div class="md:col-span-1">
           <div class="flex flex-col">
             <span class="text-xs font-bold tracking-[0.3em] text-gray-400 uppercase">Clínica Veterinaria</span>
-            <span class="text-4xl font-black text-verde-marca leading-tight uppercase">Villamarq</span></span>
+            <span class="text-[32px] font-black text-verde-marca leading-tight uppercase">Villamarq</span></span>
           </div>
           <p class="text-sm italic text-gray-300 mt-2">“Porque amamos tu mascota”</p>
           <p class="text-gray-400 mt-6 text-sm">Más que una clínica, una familia que entiende y cuida a quienes más quieres.</p>
